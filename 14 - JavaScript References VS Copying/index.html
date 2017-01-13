@@ -86,16 +86,21 @@
         facebook: 'wesbos.developer'
       }
     };
-
     console.log(wes);
 
     const dev = Object.assign({}, wes);
     dev.social.twitter = '@Pencilvestyr'
     console.log(wes, dev);
+    console.log('Shallow but performant');
 
     const dev2 = JSON.parse(JSON.stringify(wes));
-    dev2.social.twitter = '@Hamurai'
+    dev2.social.twitter = '@Hamurai';
     console.log(wes, dev2);
+    console.log('Double encoding via JSON is super ineffcient.');
+    console.log('But you get deep cloning of attributes out of it.');
+    console.log('However, if your object has any methods on it, your SOL.');
+    console.log('JSON doesn\'t grok methods.');
+
   </script>
 
 </body>
